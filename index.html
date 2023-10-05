@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text editor</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/IcreateHtml/favcon/main/favcon%20(2).ico">
+  </head>
+  <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+      body {
+        margin: 1;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .navbar {
+        overflow: hidden;
+        background-color: gray;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .navbar a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .navbar select {
+        padding: 10px 20px;
+        background-color: gray;
+        color: white;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .navbar button.hover {
+        background-color: black;
+        color: blue;
+      }
+
+      .main {
+        padding: 16px;
+        margin-bottom: 30px;
+      }
+
+      .navbar select:hover {
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .navbar button:hover {
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+    </head>
+    <body>
+      <div class="navbar">
+        <select id="format" name="format">
+          <option value=".html">HTML</option>
+          <option value=".txt">Text</option>
+        </select>
+        <!-- End of dropdown menu -->
+        <button type="button" onclick="saveText()">Save Text</button>
+        <input type="file" id="fileInput" style="display:none">
+        <button type="button" onclick="uploadFile()">Upload File</button>
+        </form>
+      </div>
+      <style>
+        body {
+          background-color: lightgrey;
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: grey;
+          color: white;
+          border: none;
+          font-size: 16px;
+          cursor: pointer;
+        }
+
+        textarea {
+          padding: 10% 37%;
+          margin-right: px;
+          color: ;
+          border: ;
+          font-size: 12px;
+          cursor: pointer;
+        }
+
+        label,
+        h1 {
+          font-family: cursive;
+        }
+
+        textarea {
+          font-family: cursive;
+          border-color: white;
+        }
+
+        textarea {}
+
+        h1 {
+          text-align: center;
+        }
+
+        label {
+          text-align: center;
+        }
+      </style>
+      </style>
+      <h1>Text Editor </h1>
+      <form>
+        <label for="text">Type your text here:</label>
+        <br>
+        <textarea id="text" name="text" rows="10" cols="60"></textarea>
+        <br>
+        <br>
+        <!-- Add a dropdown menu to select file format -->
+        <style></style>
+        <script>
+          function saveText() {
+            var e = document.getElementById("text").value,
+              t = new Blob([e], {
+                type: "text/plain"
+              }),
+              n = document.createElement("a");
+            // Get the selected file format from the dropdown menu
+            var f = document.getElementById("format").value;
+            n.download = "SavedFileInNotepad" + f; // Add the file format to the file name
+            n.innerHTML = "Download File", null != window.webkitURL ? n.href = window.webkitURL.createObjectURL(t) : (n.href = window.URL.createObjectURL(t), n.onclick = destroyClickedElement, n.style.display = "none", document.body.appendChild(n)), n.click()
+          }
+
+          function uploadFile() {
+            document.getElementById("fileInput").click(), document.getElementById("fileInput").addEventListener("change", function() {
+              var e = new FileReader;
+              e.onload = function() {
+                document.getElementById("text").value = e.result
+              }, e.readAsText(document.getElementById("fileInput").files[0])
+            })
+          }
+        </script>
+        <noscript>Javascript Has Been Disabled Please Enable Javascript to continue.</noscript>
+    </body>
+</html>
